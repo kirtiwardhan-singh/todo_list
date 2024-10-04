@@ -1,0 +1,17 @@
+.inputBox {
+    width: calc(100% - 90px); /* Adjusts width considering button width and margin */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    animation: yellowGlow 1.5s infinite alternate;
+}
+
+@keyframes yellowGlow {
+    0% {
+        box-shadow: 0 0 5px yellow;
+    }
+    100% {
+        box-shadow: 0 0 20px yellow;
+    }
+}

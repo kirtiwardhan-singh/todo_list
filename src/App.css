@@ -1,0 +1,29 @@
+
+
+input{
+    width:100%;
+}
+
+
+.krow {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures spacing between input and button */
+}
+
+.kbutton {
+    min-width: 80px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-left: 10px; /* Adds space between input and button */
+}
+
+.kbutton:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
