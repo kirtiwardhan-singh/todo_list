@@ -1,0 +1,18 @@
+# Docker Compose for Todo App
+version: '3.8'
+
+services:
+  todo-app:
+    build: .
+    ports:
+      - "3000:80"
+    container_name: todo-list-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - todo-network
+
+networks:
+  todo-network:
+    driver: bridge

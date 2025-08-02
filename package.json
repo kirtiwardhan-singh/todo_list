@@ -7,7 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker:build": "docker build -t todo-list-app .",
+    "docker:run": "docker run -d -p 3000:80 --name todo-list-app todo-list-app",
+    "docker:stop": "docker stop todo-list-app",
+    "docker:remove": "docker rm todo-list-app",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up",
+    "docker:prod": "docker-compose up",
+    "docker:clean": "docker system prune -f"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",

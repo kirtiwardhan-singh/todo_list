@@ -13,12 +13,25 @@ function App() {
   const addNewItem = (itemName, itemDueDate) => {
     const newTodoItems = [
       ...todoItems,
-      { name: itemName, dueDate: itemDueDate },
+      { 
+        id: Date.now(), 
+        name: itemName, 
+        dueDate: itemDueDate,
+        completed: false 
+      },
     ];
+    setTodoItems(newTodoItems);
   };
 
-  const deleteItem = (todoItemName) => {
-    const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
+  const deleteItem = (todoItemId) => {
+    const newTodoItems = todoItems.filter((item) => item.id !== todoItemId);
+    setTodoItems(newTodoItems);
+  };
+
+  const toggleComplete = (todoItemId) => {
+    const newTodoItems = todoItems.map((item) => 
+      item.id === todoItemId ? { ...item, completed: !item.completed } : item
+    );
     setTodoItems(newTodoItems);
   };
 
@@ -28,14 +41,15 @@ function App() {
         todoItems,
         addNewItem,
         deleteItem,
+        toggleComplete,
       }}
     >
-      <center classNameNameName="todo-container">
+      <div className="todo-container">
         <AppName />
         <AddTodo />
-        <WelcomeMessage></WelcomeMessage>
+        <WelcomeMessage />
         <TodoItems />
-      </center>
+      </div>
     </TodoItemsContext.Provider>
   );
 }
